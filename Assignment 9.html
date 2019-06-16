@@ -55,7 +55,12 @@
         let holder=0
 
         function play() {
+          if (holder = -1){
+            holder = 0
+            playlist[holder].getName()
+          } else {
           playlist[holder].getName()
+          }
         }
 
         function pause() {
@@ -63,10 +68,12 @@
         }
 
         function next(){
-          if (holder  0) {
+          if (holder = -1) {
+            holder = 0
             playlist[holder].getName()
           } else {
-            holder+=1
+            holder++}
+
           if (holder>=playlist.length) {
               holder=playlist.length
               document.getElementById("mediaName").innerHTML = ("")
@@ -74,12 +81,11 @@
             playlist[holder].getName()
             }
           }
-        }
 
         function previous(){
           holder-=1
           if (holder<0) {
-            holder=0
+            holder=-1
             document.getElementById("mediaName").innerHTML = ("")
           } else {
           playlist[holder].getName();
