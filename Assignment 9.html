@@ -33,7 +33,7 @@
 
           }
           getName() {
-            document.getElementById("mediaName").innerHTML = ("\n Name: " + this.name + "\n Duration: " + this.duration);
+            document.getElementById("mediaName").innerHTML = ("Name: " + this.name + "<br> Duration: " + this.duration);
           }
         }
 
@@ -42,7 +42,7 @@
             super(name, duration, artist, rating);
           }
           getName() {
-            document.getElementById("mediaName").innerHTML = ("\n Name: " + this.name + "\n Rating: " + this.rating + "\n Duration: " + this.duration);
+            document.getElementById("mediaName").innerHTML = ("Name: " + this.name + "<br> Rating: " + this.rating + "<br> Duration: " + this.duration);
           }
         }
         let a = new Song("Love On Top","3:20","Beyonce")
@@ -52,10 +52,14 @@
         let e = new Movie("Inception", "3:50", "", "4 stars")
 
         var playlist = [a, b, c, d, e]
+
+        playlist.push(new Movie ("Sexy", "2:00", "", "0 Stars"))
+        //add to playlist
+
         let holder=0
 
         function play() {
-          if (holder = -1){
+          if (holder == -1){
             holder = 0
             playlist[holder].getName()
           } else {
