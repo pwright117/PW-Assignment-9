@@ -67,23 +67,23 @@
           document.getElementById("mediaName").innerHTML = ("")
         }
 
-        function next(){
-          if (holder = -1) {
+        function next() {
+          if (holder == -1) {
             holder = 0
             playlist[holder].getName()
           } else {
-            holder++}
-
-          if (holder>=playlist.length) {
+            holder++
+            if (holder>=playlist.length) {
               holder=playlist.length
               document.getElementById("mediaName").innerHTML = ("")
             } else {
-            playlist[holder].getName()
+              playlist[holder].getName()
             }
+          }
           }
 
         function previous(){
-          holder-=1
+          holder--
           if (holder<0) {
             holder=-1
             document.getElementById("mediaName").innerHTML = ("")
