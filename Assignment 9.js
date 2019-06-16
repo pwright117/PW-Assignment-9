@@ -7,35 +7,34 @@ class Media {
   }
 }
 
-class Music {
-  constructor(name, artist, duration) {
-    this.name = name;
-    this.artist = artist;
-    this.duration = duration;
+class Music extends Media {
+  constructor(name, duration, artist, rating) {
+    super(name)
+    super(artist)
+    super(duration)
   }
-  getSong() {
-    return this.name + " " + this.artist + " " + this.duration;
-  }
-}
-let song = new Music() = ("test", "testing", "1 min")
-console.log(getSong())
-class Podcast {
-  constructor(name, duration) {
-    this.name = name;
-    this.duration = duration;
-  }
-  getCast() {
-    return this.name + " " + this.duration;
+  getName() {
+    console.log(this.name + " " + this.artist + " " + this.duration);
   }
 }
 
-class Movie {
-  constructor(name, rating, duration) {
-    this.name = name;
-    this.rating = rating;
-    this.duration = duration;
+class Podcast extends Media {
+  constructor(name, duration, artist, rating) {
+    super(name);
+
   }
-  getFilm() {
-    return this.name + " " + this.rating + " " + this.duration;
+  getName() {
+    console.log(this.name + " " + this.duration);
+  }
+}
+
+class Movie extends Media {
+  constructor(name, duration, artist, rating) {
+    super(name);
+    super(rating);
+    super(duration);
+  }
+  getName() {
+    console.log(this.name + " " + this.rating + " " + this.duration);
   }
 }
